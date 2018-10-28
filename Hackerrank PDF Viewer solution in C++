@@ -1,0 +1,23 @@
+#include <math.h>
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <assert.h>
+#include <limits.h>
+#include <stdbool.h>
+int main(){
+    int a[26];
+    for(int i=0;i<26;i++){
+        scanf("%d",&a[i]);
+    }
+       char* b = (char *)malloc(512000 * sizeof(char));
+    scanf("%s",b);
+    int len=strlen(b);
+    int temp=a[b[0]-97];
+    for(int i=0;i<len;i++){
+        if(temp<a[b[i]-97]){
+            temp=a[b[i]-97];
+        }
+    }
+    printf("%d",len*temp);
+}
